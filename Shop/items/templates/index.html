@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Steller landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Shopping website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- font icons -->
+    <link rel="stylesheet" href="{% static 'assets/vendors/themify-icons/css/themify-icons.css' %}">
+    <!-- Bootstrap + Steller main styles -->
+	<link rel="stylesheet" href="{% static 'assets/css/steller.css' %}">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- Page navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" data-spy="affix" data-offset-top="0">
+        <div class="container">
+            <a class="navbar-brand" href="/"><img src="{% static 'assets/imgs/logo.svg' %}" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Домой</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#service">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Товары</a>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="- btn btn-warning rounded ml-4" href="/logout/">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="- btn btn-primary rounded ml-4" href="/login/">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="- btn btn-success rounded ml-4" href="/register/">Register</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>          
+    </nav>
+    <!-- End of page navibation -->
+
+    <!-- Page Header -->
+    <header class="header" id="home">
+        <div class="container">
+            <div class="infos">
+                <h6 class="subtitle">Привет, это</h6>
+                <h3 class="title">Лучший торговый сайт</h3>
+            </div>              
+            <div class="img-holder">
+                <img src="{% static 'assets/imgs/man.svg' %}" alt="">
+            </div>      
+        </div>  
+
+        <!-- Header-widget -->
+        <div class="widget">
+            <div class="widget-item">
+                <h2>857</h2>
+                <p>Довольных клиентов</p>
+            </div>
+            <div class="widget-item">
+                <h2>900</h2>
+                <p>Проданных товаров</p>
+            </div>
+            <div class="widget-item">
+                <h2>43</h2>
+                <p>Товара вернули</p>
+            </div>
+        </div>
+    </header>
+    <!-- Skills section -->
+    <section id="service" class="section">
+        <div class="container text-center">
+            <br>
+            <br>
+            <br>
+            <br>
+            <h6 class="subtitle">Плюсы</h6>
+            <h6 class="section-title mb-4">Почему именно наш сайт?</h6>
+            <p class="mb-5 pb-4">На нашем торговом сайте есть несколько веских причин, почему именно мы заслуживаем вашего внимания. Во-первых, у нас широкий ассортимент товаров высокого качества, которые удовлетворят потребности самых требовательных клиентов. Во-вторых, мы предлагаем удобные и безопасные методы оплаты, гарантируя вашу финансовую защиту. В-третьих, наш сайт легко навигировать благодаря интуитивному интерфейсу и функциональности. Наконец, мы гордимся быстрой и надежной доставкой, обеспечивая удовлетворение ваших потребностей в срок. Мы стремимся предоставить вам лучший опыт онлайн-шопинга, и наш торговый сайт является идеальным выбором для ваших потребностей.</p>
+        </div>
+    </section>
+    <!-- End of Skills sections -->
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+        <div class="container text-center">
+            <h6 class="subtitle">Каталог</h6>
+            <h6 class="section-title mb-4">Товары</h6>
+            <div class="row text-left">
+                <div class="col-md-4">
+                    <div class="card border mb-4">
+                        <img height="400px" src="{% static 'assets/imgs/letnyaya.webp' %}" alt="" class="card-img-top w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Летняя одежда</h5>
+                            <div class="post-details">
+                                <a href="javascript:void(0)">Posted By: Admin</a>
+                            </div>
+                            <p>Летняя одежда – это яркие футболки, шорты, легкие сарафаны, солнцезащитные очки и удобные сандалии для комфортной жаркой погоды.</p>
+                            <a href="category/detail/1">Подробнее..</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border mb-4">
+                        <img height="400px" src="{% static 'assets/imgs/zimnyaya.jpeg' %}" alt="" class="card-img-top w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Зимняя одежда</h5>
+                            <div class="post-details">
+                                <a href="javascript:void(0)">Posted By: Admin</a>
+                            </div>
+                            <p>Зимняя одежда - теплые куртки, вязанные шапки, мягкие шарфы, теплые сапоги и перчатки, обеспечивающие уют и защиту от холода.</p>
+                            <a href="category/detail/2">Подробнее..</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border mb-4">
+                        <img height="400px" src="{% static 'assets/imgs/ocenne.jpeg' %}" alt="" class="card-img-top w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Осенне-весенняя одежда</h5>
+                            <div class="post-details">
+                                <a href="javascript:void(0)">Posted By: Admin</a>
+                            </div>
+                            <p>Осенне-весенняя одежда включает в себя легкие пальто, деним, свитера, кофты и ботинки, обеспечивая комфорт при переменчивой погоде.</p>
+                            <a href="category/detail/3">Подробнее..</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
